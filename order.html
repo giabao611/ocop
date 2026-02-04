@@ -1,0 +1,196 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng | OCOP Lệ Thuỷ</title>
+    <link rel="stylesheet" href="orderstyle.css">
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">OCOP LỆ THUỶ</div>
+    </div>
+</header>
+
+<nav class="main-menu">
+    <ul class="nav-list">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="detail.html">Chi tiết sản phẩm</a></li>
+        <li><a href="order.html" class="active">Đặt hàng</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    
+    <div class="contact">
+        <a href="tel:0817183357" class="btn-call">
+            Gọi ngay
+        </a>
+    </div>
+
+    <div class="order-section">
+        <h3 class="product-title"> Chọn sản phẩm</h3>
+        
+        <table>
+            <tr>
+                <th>Chọn</th>
+                <th>Sản phẩm</th>
+                <th>Giá (đ)</th>
+                <th>Số lượng</th>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" onclick="toggleQty(0)"></td>
+                <td>Hạt tiêu sấy lạnh Sen Thuỷ</td>
+                <td>150000</td>
+                <td><input type="number" min="1" value="1" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" onclick="toggleQty(1)"></td>
+                <td>Sữa tắm bồ hòn thảo mộc</td>
+                <td>120000</td>
+                <td><input type="number" min="1" value="1" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" onclick="toggleQty(2)"></td>
+                <td>Khoai gieo sấy Lâm Hường</td>
+                <td>195000</td>
+                <td><input type="number" min="1" value="1" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" onclick="toggleQty(3)"></td>
+                <td>Yến sào Sơn Hải</td>
+                <td>345000</td>
+                <td><input type="number" min="1" value="1" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" onclick="toggleQty(4)"></td>
+                <td>Chả mực Ngư Thuỷ</td>
+                <td>250000</td>
+                <td><input type="number" min="1" value="1" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" onclick="toggleQty(5)"></td>
+                <td>Trà ngủ ngon Thanh Bình</td>
+                <td>105000</td>
+                <td><input type="number" min="1" value="1" disabled></td>
+            </tr>
+
+        </table>
+
+        <button class="btn-submit" onclick="calculateTotal()">Đã xong</button>
+
+        <div class="total-price" id="totalPrice"></div>
+    </div>
+
+
+    <div class="order-section">
+        <h3 class="product-title"> Thông tin khách hàng</h3>
+
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" placeholder="Nhập họ và tên">
+        </div>
+
+        <div class="form-group">
+            <label>Địa chỉ</label>
+            <input type="text" placeholder="Nhập địa chỉ nhận hàng">
+        </div>
+
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" placeholder="Nhập số điện thoại">
+        </div>
+
+        <div class="form-group">
+            <label>Ghi chú cho người bán</label>
+            <input type="text" placeholder="Nhập ghi chú cho người bán">
+        </div>
+
+        <button class="btn-submit" onclick="sendOrder()">Gửi đơn hàng</button>
+    </div>
+
+
+</div>
+
+<script>
+    function toggleQty(index) {
+        const row = document.querySelectorAll("table tr")[index + 1];
+        const checkbox = row.querySelector("input[type='checkbox']");
+        const qty = row.querySelector("input[type='number']");
+        qty.disabled = !checkbox.checked;
+    }
+
+    function calculateTotal() {
+        let total = 0;
+        const rows = document.querySelectorAll("table tr");
+        rows.forEach((row, index) => {
+            if (index === 0) return;
+            const checkbox = row.querySelector("input[type='checkbox']");
+            if (checkbox && checkbox.checked) {
+                const price = parseInt(row.cells[2].innerText);
+                const qty = row.querySelector("input[type='number']").value;
+                total += price * qty;
+            }
+        });
+        document.getElementById("totalPrice").innerText =
+            "Tổng tiền: " + total.toLocaleString("vi-VN") + " đ";
+    }
+
+    function sendOrder() {
+        const inputs = document.querySelectorAll(".order-section:last-child input");
+        const name = inputs[0].value.trim();
+        const address = inputs[1].value.trim();
+        const phone = inputs[2].value.trim();
+
+        if (name === "" || address === "" || phone === "") {
+            alert("Vui lòng điền đầy đủ thông tin!");
+            return;
+        }
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(phone)) {
+            alert("Vui lòng điền đúng SĐT có 10 chữ số!");
+            return;
+        }
+        alert("Cảm ơn bạn đã tin tưởng và ủng hộ sản phẩm của OCOP Lệ Thuỷ!");
+        window.location.reload();
+
+    }
+</script>
+
+</body>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h4>OCOP LỆ THUỶ</h4>
+            <p>Địa chỉ: 29 Hùng Vương, xã Lệ Thuỷ</p>
+        </div>
+
+
+        <div>
+            <h4>Thông tin liên hệ</h4>
+            <p>Fanpage: <a href="https://www.facebook.com/ocoplethuy" class="btn-id">OCOP Huyện Lệ Thuỷ</a> </p>
+            <p>Hotline: 081 718 3357</p>
+            <p>Email: contact@ocopstore.vn</p>
+        </div>
+    </div>
+       
+    <div class="footer-bottom">
+        &copy; 2026 Bản quyền thuộc về OCOP Lệ Thuỷ
+    </div>
+</footer>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+<html lang="vi">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ | Gian Hàng OCOP</title>
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">OCOP LỆ THUỶ</div>
+        </div>
+    </header>
+
+    <nav class="main-menu">
+    <ul class="nav-list">
+        <li><a href="index.html" class="active">Trang chủ</a></li>
+        <li><a href="detail.html">Chi tiết sản phẩm</a></li>
+        <li><a href="order.html">Đặt hàng</a></li>
+    </ul>
+    </nav>
+    
+    <section class="banner">
+    </section>
+
+    <main class="container">
+         <div class="contact">
+            <a href="tel:0817183357" class="btn-call">
+                Gọi ngay
+            </a>
+        </div>
+
+        <section class="intro-section">
+            <h3>Về chúng tôi</h3>
+            <p>Nằm giữa vùng Lệ Thuỷ nắng và gió, địa phương chúng tôi tự hào mang đến những dòng sản phẩm đạt chuẩn OCOP. Mỗi sản phẩm không chỉ là hàng hóa, mà còn chứa đựng câu chuyện văn hóa và tâm huyết của người nông dân Việt Nam.</p>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm">
+            <button onclick="searchProduct()" class="btn-search"> TÌM KIẾM </button>
+        </div>
+
+        <h3 class="product-title">Danh Sách Sản Phẩm</h3>
+        <div class="product-grid">
+           
+            <div class="product-card">
+                <img src="ẢNH/tieu.jpg" alt="Sản phẩm 1" class="product-img">
+                <div class="product-info">
+                    <div class="product-name">HẠT TIÊU SẤY LẠNH SEN THUỶ</div>
+                    <div class="product-price">150.000đ</div>
+                    <p class="product-desc"> Tiêu có vị cay nồng đặc trưng, áp dụng công nghệ sấy lạnh và tiệt trùng.</p>
+                        <a href="detail.html#hat-tieu" class="btn btn-detail">Chi tiết</a>
+                        <a href="order.html?sp=hat-tieu" class="btn btn-order">Đặt ngay</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="ẢNH/suatam.jpg" alt="Sản phẩm 2" class="product-img">
+                <div class="product-info">
+                    <div class="product-name">SỮA TẮM BỒ HÒN THẢO MỘC</div>
+                    <div class="product-price">120.000đ</div>
+                    <p class="product-desc">Chiết xuất từ bồ hòn và nhiều loại lá thảo mộc kết hợp tinh dầu</p>
+                        <a href="detail.html#sua-tam" class="btn btn-detail">Chi tiết</a>
+                        <a href="order.html?sp=hat-tieu" class="btn btn-order">Đặt ngay</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="ẢNH/khoaigieo.jpg" alt="Sản phẩm 3" class="product-img">
+                <div class="product-info">
+                    <div class="product-name">KHOAI GIEO SẤY LÂM HƯỜNG</div>
+                    <div class="product-price">195.000đ</div>
+                    <p class="product-desc">Hương vị mộc mạc, đậm chất quê hương, mùi thơm cay ấm đặc trưng.</p>
+                        <a href="detail.html#khoai-gieo" class="btn btn-detail">Chi tiết</a>
+                        <a href="order.html?sp=hat-tieu" class="btn btn-order">Đặt ngay</a>
+                </div>
+            </div>
+
+                        <div class="product-card">
+                <img src="ẢNH/yensao.jpg" alt="Sản phẩm 3" class="product-img">
+                <div class="product-info">
+                    <div class="product-name">YẾN SÀO SƠN HẢI - QBI NEST</div>
+                    <div class="product-price">345.000đ</div>
+                    <p class="product-desc">Khai thác từ nguồn yến tự nhiên. Có giá trị dinh dưỡng cao.</p>
+                        <a href="detail.html#yen-sao" class="btn btn-detail">Chi tiết</a>
+                        <a href="order.html?sp=hat-tieu" class="btn btn-order">Đặt ngay</a>
+                </div>
+            </div>
+
+                        <div class="product-card">
+                <img src="ẢNH/chamuc.jpg" alt="Sản phẩm 3" class="product-img">
+                <div class="product-info">
+                    <div class="product-name">CHẢ MỰC NGƯ THUỶ</div>
+                    <div class="product-price">150.000đ</div>
+                    <p class="product-desc">Mang hương vị biển đặc trưng, tươi ngon. Được hút chân không chắc chắn.</p>
+                        <a href="detail.html#cha-muc" class="btn btn-detail">Chi tiết</a>
+                        <a href="order.html?sp=hat-tieu" class="btn btn-order">Đặt ngay</a>
+                </div>
+            </div>
+
+                        <div class="product-card">
+                <img src="ẢNH/tra.jpg" alt="Sản phẩm 3" class="product-img">
+                <div class="product-info">
+                    <div class="product-name">TRÀ NGỦ NGON THANH BÌNH</div>
+                    <div class="product-price">105.000đ</div>
+                    <p class="product-desc"> Sản phẩm hướng đến chăm sóc giấc ngủ an toàn, tự nhiên.</p>
+                        <a href="detail.html#tra" class="btn btn-detail">Chi tiết</a>
+                        <a href="order.html?sp=hat-tieu" class="btn btn-order">Đặt ngay</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>OCOP LỆ THUỶ</h4>
+                <p>Địa chỉ: 29 Hùng Vương, xã Lệ Thuỷ</p>
+            </div>
+
+
+            <div>
+                <h4>Thông tin liên hệ</h4>
+                <p>Fanpage: <a href="https://www.facebook.com/ocoplethuy" class="btn-id">OCOP Huyện Lệ Thuỷ</a> </p>
+                <p>Hotline: 081 718 3357</p>
+                <p>Email: contact@ocopstore.vn</p>
+            </div>
+        </div>
+       
+        <div class="footer-bottom">
+            &copy; 2026 Bản quyền thuộc về OCOP Lệ Thuỷ
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    function searchProduct() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.querySelectorAll('.product-card');
+
+        cards.forEach(card => {
+            let name = card.querySelector('.product-name').innerText.toLowerCase();
+            if (name.includes(input)) {
+                card.style.display = ""; 
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+        document.getElementById("searchInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                searchProduct();
+            }
+        });
+</script>
+</html>
+
+
+
